@@ -18,15 +18,15 @@ def romenconcert(num):
         return roman
 
 @app.route("/",methods=["POST","GET"])
-def index(): #developer_name index.htmlde
+def index():
     developer_name="E2127 Murat"
-    if request.method == "POST": #post olursa result.html(kullanici bize sayi gonderiyor sonucu gosterdik), get olursa index.html(sayi girdi), her sayfa tiklamasi get request
-        number_decimal = request.form.get("number") #index.html de form da girilen sayiyi aldik
-        number_roman = romenconcert(number_decimal) #yukaridaki fonksiyonumuza soktuk, donusum oldu
-        return render_template("result.html", number_decimal = number_decimal, number_roman=number_roman, developer_name=developer_name) #result.html e neler dondurecegiz
+    if request.method == "POST":
+        number_decimal = request.form.get("number")
+        number_roman = romenconcert(number_decimal) 
+        return render_template("result.html", number_decimal = number_decimal, number_roman=number_roman, developer_name=developer_name)
     else:
-        return render_template("index.html", developer_name=developer_name)#get metodu da index.html dondurur 
+        return render_template("index.html", developer_name=developer_name)
     
 if __name__=="__main__":
     #app.run(debug="True")
-    app.run(host=0.0.0.0/0, port=80)
+    app.run(host="0.0.0.0/0", port=80)
