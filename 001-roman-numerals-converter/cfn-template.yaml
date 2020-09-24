@@ -55,17 +55,17 @@ Resources:
       UserData:
         Fn::Base64:
           !Sub |
-          #! /bin/bash
-          yum update -y
-          install python3 -y
-          pip3 install flask
-          wget
-          mkdir templates
-          cd templates
-          wget
-          wget
-          cd ..
-          python3 app.py  
+            #! /bin/bash
+            yum update -y
+            install python3 -y
+            pip3 install flask
+            wget https://raw.githubusercontent.com/Mrt-Kom/MyProjects/master/001-roman-numerals-converter/app.py
+            mkdir templates
+            cd templates
+            wget https://raw.githubusercontent.com/Mrt-Kom/MyProjects/master/001-roman-numerals-converter/templates/index.html
+            wget https://raw.githubusercontent.com/Mrt-Kom/MyProjects/master/001-roman-numerals-converter/templates/result.html
+            cd ..
+            python3 app.py  
 
   mySecurityGroup:
     Type: "AWS::EC2::SecurityGroup"
