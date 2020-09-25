@@ -57,7 +57,7 @@ Resources:
           !Sub |
             #! /bin/bash
             yum update -y
-            install python3 -y
+            yum install python3 -y
             pip3 install flask
             cd /home/ec2-user
             wget https://raw.githubusercontent.com/Mrt-Kom/MyProjects/master/001-roman-numerals-converter/app.py
